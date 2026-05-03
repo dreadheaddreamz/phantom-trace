@@ -15,4 +15,5 @@ function LogList({ logs }: LogListProps) {
   );
 }
 
+
 export default LogList;

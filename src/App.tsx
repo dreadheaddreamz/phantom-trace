@@ -88,20 +88,29 @@ function App() {
     );
 
   return (
-    <div>
-      <h1>Log Monitor Dashboard</h1>
+    <main className="app-shell">
+      <section className="dashboard">
+        <h1>Phantom Trace</h1>
+        <p className="subtitle">Real-time log monitoring dashboard</p>
 
-      <LogFilter selectedLevel={selectedLevel} onChange={setSelectedLevel} />
+        <div className="controls">
+          <LogFilter
+            selectedLevel={selectedLevel}
+            onChange={setSelectedLevel}
+          />
 
-      <input
-        type="text"
-        placeholder="Search by message or source..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search by message or source..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
 
-      <LogList logs={filteredLogs} />
-    </div>
+        <LogList logs={filteredLogs} />
+      </section>
+    </main>
   );
 }
 

@@ -4,22 +4,21 @@ type LogCardProps = {
   log: Log;
 };
 
-const getLevelColor = (level: Log["level"]) => {
-  switch (level) {
-    case "error":
-      return "red";
-    case "warn":
-      return "orange";
-    case "info":
-      return "green";
-    default:
-      return "black";
-  }
+const formatTimestamp = (timestamp: string): string => {
+  const date = new Date(timestamp);
+
+  return date.toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
 };
 
 function LogCard({ log }: LogCardProps) {
   return (
-    <div>
+    <div className={`log-card ${log.level}`}>
       <p>
         <strong>Message:</strong> {log.message}
       </p>
@@ -36,12 +35,9 @@ function LogCard({ log }: LogCardProps) {
       </p>
 
       <p>
-        <strong>Timestamp:</strong> {log.timestamp}
+        <strong>Timestamp:</strong> {formatTimestamp(log.timestamp)}
       </p>
-
-      <hr />
     </div>
   );
 }
-
 export default LogCard;

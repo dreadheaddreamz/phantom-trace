@@ -213,3 +213,127 @@
   background-color: #064e3b;
   color: #a7f3d0;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #a3a3a3;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-input,
+select {
+  background: #111;
+  color: #f5f5f5;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.search-input {
+  min-width: 280px;
+}
+
+.log-card {
+  background: #111;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.log-card p {
+  margin: 8px 0;
+}
+
+.level-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.level-badge.error {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+.level-badge.warn {
+  background-color: #78350f;
+  color: #fde68a;
+}
+
+.level-badge.info {
+  background-color: #064e3b;
+  color: #a7f3d0;
+}
+
+hr {
+  display: none;
+}
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.log-card {
+  position: relative;
+  padding-left: 20px;
+}
+
+.log-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  border-radius: 2px;
+  background: #22c55e;
+}
+
+.log-card.error::before {
+  background: #ef4444;
+}
+
+.log-card.warn::before {
+  background: #f59e0b;
+}
+
+.log-card.info::before {
+  background: #22c55e;
+}
