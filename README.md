@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# Log Monitor Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern log monitoring dashboard built with **React** and **TypeScript** that allows users to view, filter, and analyze system logs in a clean and scalable UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* Filter logs by level (**error, warn, info**)
+* Modular component architecture
+* Type-safe data modeling with centralized types
+* Clean separation of concerns (App, Filter, List, Card)
+* Scalable structure for future backend integration
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **React**
+* **TypeScript**
+* **Vite**
+* **CSS**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📁 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+  components/
+    LogCard.tsx
+    LogFilter.tsx
+    LogList.tsx
+  types/
+    Log.ts
+  App.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the repo
+
 ```
+git clone https://github.com/dreadheaddreamz/log-monitor-react.git
+cd log-monitor-react
+```
+
+### 2. Install dependencies
+
+```
+npm install
+```
+
+### 3. Run the app
+
+```
+npm run dev
+```
+
+---
+
+## 📈 Future Improvements
+
+* Search functionality (by message and source)
+* Real-time log streaming
+* Backend integration (Node.js / API)
+* Log severity badges & UI enhancements
+* Pagination for large datasets
+
+---
+
+## 💡 Why This Project
+
+This project demonstrates:
+
+* Component-based architecture in React
+* Strong TypeScript usage with shared types
+* Clean, maintainable code organization
+* Ability to build scalable frontend systems
+
+---
+
+## 👤 Author
+
+**James Batsell**
+GitHub: https://github.com/dreadheaddreamz
