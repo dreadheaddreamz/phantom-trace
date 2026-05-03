@@ -1,5 +1,4 @@
 import { useState } from "react";
-import LogCard from "./components/LogCard";
 import LogFilter from "./components/LogFilter";
 import type { Log, LogLevel } from "./types/Log";
 import LogList from "./components/LogList";
@@ -31,18 +30,29 @@ const logs: Log[] = [
 
 function App() {
   const [selectedLevel, setSelectedLevel] = useState<LogLevel | "all">("all");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredLogs =
-    selectedLevel === "all"
-      ? logs
-      : logs.filter((log) => log.level === selectedLevel);
+  const filteredLogs = logs
+    .filter((log) =>
+      selectedLevel === "all" ? true : log.level === selectedLevel,
+    )
+    .filter(
+      (log) =>
+        log.message.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        log.source.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
 
   return (
     <div>
       <h1>Log Monitor Dashboard</h1>
 
       <LogFilter selectedLevel={selectedLevel} onChange={setSelectedLevel} />
-
+      <input
+        type="text"
+        placeholder="Search by message or source..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <LogList logs={filteredLogs} />
     </div>
   );
