@@ -182,3 +182,34 @@
     border-right-color: var(--border);
   }
 }
+
+.log-card {
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  background-color: #111;
+}
+
+.level-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.level-badge.error {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+.level-badge.warn {
+  background-color: #78350f;
+  color: #fde68a;
+}
+
+.level-badge.info {
+  background-color: #064e3b;
+  color: #a7f3d0;
+}

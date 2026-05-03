@@ -26,7 +26,7 @@ function LogCard({ log }: LogCardProps) {
 
       <p>
         <strong>Level:</strong>{" "}
-        <span style={{ color: getLevelColor(log.level) }}>
+        <span className={`level-badge ${log.level}`}>
           {log.level.toUpperCase()}
         </span>
       </p>
